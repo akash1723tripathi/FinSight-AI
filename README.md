@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StockSense AI — Multi-modal Stock Prediction System
+
+> Final Year B.Tech Capstone Project | JSS Academy of Technical Education, Noida | May 2026
+
+A live demo of a hybrid stock prediction system combining real-time market data, FinBERT sentiment analysis, and ensemble modeling to generate Buy/Sell/Hold signals for AAPL, GOOGL, and TSLA.
+
+---
+
+## 🚀 Live Demo
+
+**[stocksense-ai.vercel.app](https://stocksense-ai.vercel.app)** ← replace with your actual URL
+
+---
+
+## What It Does
+
+- **Real stock data** via Yahoo Finance — price charts, technical indicators (RSI, MACD, Bollinger Bands)
+- **Real sentiment analysis** via HuggingFace FinBERT — reads live financial news and scores it positive/negative/neutral
+- **Ensemble prediction** — weighted combination of TLSTM (α=0.51), LSTM (β=0.30), XGBoost (γ=0.20)
+- **Trading signals** — BUY / SELL / HOLD with confidence scores
+- **Evaluation results** — model comparison table, backtest chart, ablation study visuals
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend & API | Next.js 14 (App Router, TypeScript) |
+| Styling | Tailwind CSS + shadcn/ui |
+| Charts | Recharts |
+| Stock Data | yahoo-finance2 |
+| News | NewsAPI |
+| Sentiment Model | HuggingFace — ProsusAI/finbert |
+| Deployment | Vercel |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+```bash
+git clone https://github.com/yourusername/stocksense-ai
+cd stocksense-ai
+npm install
+```
+
+Create `.env.local` in root:
+
+```env
+NEWSAPI_KEY=your_newsapi_key
+HF_TOKEN=your_huggingface_token
+```
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── page.tsx          # Dashboard — live charts + sentiment
+├── prediction/       # Run live prediction for any ticker
+└── results/          # Evaluation results + backtest charts
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Research Paper Results
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Model | RMSE | R² Score |
+|---|---|---|
+| Standard LSTM | 3.452 | 0.824 |
+| XGBoost | 3.105 | 0.851 |
+| Hybrid LSTM + VADER | 2.850 | 0.887 |
+| **Our System (FinBERT + TLSTM)** | **2.341** | **0.942** |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Trading backtest (2015–2025): **315.6% total return** | Sharpe Ratio **2.45** | Max Drawdown **-12.4%**
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Team
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Harsh Jain · Ishita Sachan · Kartik Vats · **Akash Tripathi** · Divya Mishra
+
+Supervised by **Ms. Anuradha Singh** — Dept. of CSE (Data Science), JSS Academy
