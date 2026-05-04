@@ -1,4 +1,4 @@
-# StockSense AI — Multi-modal Stock Prediction System
+# FinSight AI — Multi-modal Stock Prediction System
 
 > Final Year B.Tech Capstone Project | JSS Academy of Technical Education, Noida | May 2026
 
