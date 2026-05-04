@@ -84,6 +84,6 @@ Trading backtest (2015–2025): **315.6% total return** | Sharpe Ratio **2.45** 
 
 ## Team
 
-Harsh Jain · Ishita Sachan · Kartik Vats · **Akash Tripathi** · Divya Mishra
+**Akash Tripathi** · Divya Mishra · Harsh Jain · Ishita Sachan · Kartik Vats    
 
 Supervised by **Ms. Anuradha Singh** — Dept. of CSE (Data Science), JSS Academy
