@@ -8,7 +8,7 @@ A live demo of a hybrid stock prediction system combining real-time market data,
 
 ## 🚀 Live Demo
 
-**[stocksense-ai.vercel.app](https://stocksense-ai.vercel.app)** ← replace with your actual URL
+**[Fin Sight AI](https://fin-sight-ai-chi.vercel.app/)
 
 ---
 
